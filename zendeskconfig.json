@@ -1,0 +1,9 @@
+[
+    {
+      "outputFileName": "style.css",
+      "inputFiles": [
+        "style-org.css",
+        "assets/css/chocolatey.bundle.min.css"
+      ]
+    }
+  ]

@@ -14,6 +14,7 @@
     <nav class="user-nav" id="user-nav">
       <ul class="user-nav-list">
         <li>{{link 'community'}}</li>
+        {{!-- START CHOCOLATEY SPECIFIC MODIFICATION --}}
         <li class="d-flex">
           <label class="mb-0 me-3" for="themeToggle">
               <input id="themeToggle" class="toggle-checkbox theme-toggle" type="checkbox" aria-label="Toggle theme settings" />
@@ -28,6 +29,7 @@
                 </div>
           </label>
         </li>
+        {{!-- END CHOCOLATEY SPECIFIC MODIFICATION --}}
         <li>{{link 'new_request' class='submit-a-request'}}</li>
         {{#unless signed_in}}
           <li>
