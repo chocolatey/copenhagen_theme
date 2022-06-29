@@ -17,14 +17,5 @@
     "js-yaml": "^3.13.1",
     "semantic-release": "^17.0.4"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
