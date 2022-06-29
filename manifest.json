@@ -1,7 +1,7 @@
 {
-  "name": "Copenhagen",
-  "author": "Zendesk",
-  "version": "2.16.0",
+  "name": "choco-theme",
+  "author": "Chocolatey",
+  "version": "100.0.0",
   "api_version": 2,
   "default_locale": "en-us",
   "settings": [
