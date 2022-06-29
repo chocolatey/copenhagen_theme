@@ -1,7 +1,7 @@
 {
-  "name": "Copenhagen",
-  "author": "Zendesk",
-  "version": "2.16.0",
+  "name": "choco-theme",
+  "author": "Chocolatey",
+  "version": "100.0.0",
   "api_version": 2,
   "default_locale": "en-us",
   "settings": [
@@ -134,6 +134,18 @@
           "type": "file",
           "description": "community_image_description",
           "label": "community_image_label"
+        },
+        {
+          "identifier": "sun_solid",
+          "type": "file",
+          "description": "sun_solid_description",
+          "label": "sun_solid_label"
+        },
+        {
+          "identifier": "moon_solid",
+          "type": "file",
+          "description": "moon_solid_description",
+          "label": "moon_solid_label"
         }
       ]
     },

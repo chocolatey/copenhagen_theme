@@ -11,7 +11,9 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     merge = require('merge-stream'),
     injectstring = require('gulp-inject-string'),
+    inlinesource = require('gulp-inline-source'),
     bundleconfig = require('./bundleconfig.json'),
+    zendeskconfig = require('./zendeskconfig.json'),
     fs = require('fs');
 
 const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
@@ -37,12 +39,16 @@ const getBundles = (regexPattern) => {
     });
 };
 
+const getZendeskBundles = (regexPattern) => {
+    return zendeskconfig.filter(bundle => {
+        return regexPattern.test(bundle.outputFileName);
+    });
+};
+
 function del() {
     return src([
         paths.assets + 'css',
         paths.assets + 'js',
-        paths.assets + 'fonts',
-        paths.assets + 'images/global-shared',
         paths.partials
     ], { allowEmpty: true })
         .pipe(clean({ force: true }));
@@ -139,25 +145,46 @@ function minJs() {
     return merge(tasks);
 }
 
+function zendeskCss() {
+    var tasks = getZendeskBundles(regex.css).map(function (bundle) {
+
+        return src(bundle.inputFiles, { base: '.' })
+            .pipe(concat(bundle.outputFileName))
+            .pipe(dest('.'));
+    });
+
+    return merge(tasks);
+}
+
+// If the JS/CSS included in the inline assets below need to be updated, 
+// replace the inline code with the tags specified above the function, and run `gulp`.
+
+// document_head.hbs - <script type="text/javascript" src="../assets/js/chocolatey-head.bundle.min.js" inline></script>
+// footer.hbs - <script type="text/javascript" src="../assets/js/chocolatey.bundle.min.js" inline></script>
+function inlineAssets() {
+    return src([paths.templates + 'footer.hbs', paths.templates + 'document_head.hbs'])
+        .pipe(inlinesource())
+        .pipe(dest(paths.templates));
+}
+
 function delEnd() {
     return src([
-        paths.assets + 'css/*.css',
-        '!' + paths.assets + 'css/*.min.css',
-        paths.assets + 'js/*.js',
-        '!' + paths.assets + 'js/*.min.js'
+        paths.assets + 'css',
+        paths.assets + 'js'
     ], { allowEmpty: true })
         .pipe(clean({ force: true }));
 }
 
 // Independednt tasks
 exports.del = del;
-exports.compileSass = parallel(compileSass);
+
 // Gulp series
 exports.compileSassJs = parallel(compileSass, compileJs);
 exports.minCssJs = parallel(minCss, minJs);
+exports.compileZendesk = parallel(zendeskCss, inlineAssets);
 
 // Gulp default
-exports.default = series(copyTheme, exports.compileSassJs, compileCss, purgeCss, exports.minCssJs, delEnd);
+exports.default = series(copyTheme, exports.compileSassJs, compileCss, purgeCss, exports.minCssJs, exports.compileZendesk, delEnd);
 
 // Watch files
 exports.watchFiles = function () {

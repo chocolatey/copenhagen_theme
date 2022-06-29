@@ -2,9 +2,10 @@
 <!-- Make the translated search clear button label available for use in JS -->
 <!-- See buildClearSearchButton() in script.js -->
 <script type="text/javascript">window.searchClearButtonLabelLocalized = "{{t 'search_clear'}}";</script>
-<script type="text/javascript" src="http://localhost:4567/guide/assets/js/chocolatey-head.bundle.min.js"></script>
+{{!-- START CHOCOLATEY SPECIFIC MODIFICATION --}}
+<script type="text/javascript">var html=document.getElementsByTagName("html")[0],themeStorage=localStorage.getItem("theme");themeStorage?(html.setAttribute("data-user-color-scheme",themeStorage),html.classList.add(themeStorage+"-theme")):window.matchMedia("(prefers-color-scheme: dark)").matches?(html.setAttribute("data-user-color-scheme","dark"),html.classList.add("dark-theme")):(html.setAttribute("data-user-color-scheme","light"),html.classList.add("light-theme"));</script>
 <script type="text/javascript">document.querySelector('html').classList.add('chocolatey-zendesk');</script>
+{{!-- END CHOCOLATEY SPECIFIC MODIFICATION --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4567/guide/assets/css/chocolatey.bundle.min.css"> 
