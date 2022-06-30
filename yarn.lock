@@ -1675,14 +1675,14 @@ __metadata:
   linkType: hard
 
 "@npmcli/metavuln-calculator@npm:^3.0.1":
-  version: 3.1.0
-  resolution: "@npmcli/metavuln-calculator@npm:3.1.0"
+  version: 3.1.1
+  resolution: "@npmcli/metavuln-calculator@npm:3.1.1"
   dependencies:
     cacache: ^16.0.0
     json-parse-even-better-errors: ^2.3.1
     pacote: ^13.0.3
     semver: ^7.3.5
-  checksum: 39fb474e239d3f221178f0c2f6089cd4a2fce8183343b7f52f8f9fe0b3cb0a98b386b15c9afe63a0b0dc2ae5302497d00eb2de2f4b3431953dbf05e69d613c9a
+  checksum: dc9846fdb82a1f4274ff8943f81452c75615bd9bca523c862956ea2c32e18c5a4be5572e169104d3a0eb262b7ede72c8dbbc202a4ab3b3f4946fa55f226dcc64
   languageName: node
   linkType: hard
 
@@ -1805,13 +1805,13 @@ __metadata:
   linkType: hard
 
 "@octokit/plugin-paginate-rest@npm:^2.16.8":
-  version: 2.20.0
-  resolution: "@octokit/plugin-paginate-rest@npm:2.20.0"
+  version: 2.21.0
+  resolution: "@octokit/plugin-paginate-rest@npm:2.21.0"
   dependencies:
     "@octokit/types": ^6.38.1
   peerDependencies:
     "@octokit/core": ">=2"
-  checksum: 1518e83f218898b44534628c5dd8b0feb2c9731e2ea02efb434fda3853dbc56fee51fb874e26597942c354d627694ca4da260e6b9015a96915ad015a40881c34
+  checksum: 8500448c9cfa79dbc5d7e33544da9e8ce628e3a38bfc96c9068fa2765ec5651c8b8bad36621b57c09ce952bde5136d6c3c4f685b14acf951ba8c84ad54356990
   languageName: node
   linkType: hard
 
@@ -3146,7 +3146,7 @@ __metadata:
 
 "choco-theme@git+https://github.com/chocolatey/choco-theme.git":
   version: 0.1.0
-  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=db69e38d661a1faef7e51d4caeee4f42468515c1"
+  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=04507df549670a452d6ed63e0f1f4060e04cc2c3"
   dependencies:
     "@babel/core": ^7.12.3
     "@babel/preset-env": ^7.12.1
@@ -3185,7 +3185,7 @@ __metadata:
     mousetrap: ^1.6.5
     node-sass: ^7.0.1
     nouislider: ^15.5.1
-  checksum: 84c5f5fe351d56c2495c987c86b19b441f7ce8c96d5b3b80c05c4e9098afeadabd669693059b977bda5f64d4f864674fc667c7a50418e685b6c3344c63058ac5
+  checksum: efbd606b20edc36434c8ce857bfdf60cac29b1305b0226a15d994da1211cb0570e840f4dfd349cd46e30207819c2c1b3c7c227eee38a5ab639d9ea031d8dbe17
   languageName: node
   linkType: hard
 
@@ -4246,9 +4246,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.172":
-  version: 1.4.173
-  resolution: "electron-to-chromium@npm:1.4.173"
-  checksum: c7f1fa54f104eca689099e08c8c17ccea2819749b15c882443cae0524b4b3e30e8c12367b9ba966b09f9444e944d65ae164c985a7f233b0a7ecc0daf9e6eb057
+  version: 1.4.174
+  resolution: "electron-to-chromium@npm:1.4.174"
+  checksum: e74813a0dcfa92b8e76672249018d8ec39fae4adc5321ca2970dfd6dc3cfda138a2dcca09ad3e043f2959d6f9afae85eddb63a6cb401d588a95255417bc57bc4
   languageName: node
   linkType: hard
 
@@ -7130,9 +7130,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.4.4, lru-cache@npm:^7.5.1, lru-cache@npm:^7.7.1":
-  version: 7.10.2
-  resolution: "lru-cache@npm:7.10.2"
-  checksum: b8f98064c981ce98e2a3b82903726dd28d842f54b7f53e1d6029c6836546243d4157b8495a405c062209715c612050150bdf30b5fa8200d5a3559fb0fd4072c1
+  version: 7.12.0
+  resolution: "lru-cache@npm:7.12.0"
+  checksum: fdb62262978393df7a4bd46a072bc5c3808c50ca5a347a82bb9459410efd841b7bae50655c3cf9004c70d12c756cf6d018f6bff155a16cdde9eba9a82899b5eb
   languageName: node
   linkType: hard
 
@@ -8004,8 +8004,8 @@ __metadata:
   linkType: hard
 
 "npm-packlist@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "npm-packlist@npm:5.1.0"
+  version: 5.1.1
+  resolution: "npm-packlist@npm:5.1.1"
   dependencies:
     glob: ^8.0.1
     ignore-walk: ^5.0.1
@@ -8013,7 +8013,7 @@ __metadata:
     npm-normalize-package-bin: ^1.0.1
   bin:
     npm-packlist: bin/index.js
-  checksum: aeeed530858bd760236e49f42f36174a437e632406d71ee8af91f15ad42e3a49332365c3dfa3dc0686599506e3a3701d8c7eab157480993ad8634dbc5af27adc
+  checksum: 28dab153744ceb4695b82a9032d14aa2bfb855d38344a09052673d07860a4d8725f808ed23996e6f2792c48e11f5d147632c159f798d2c24dac92b51a884f0c6
   languageName: node
   linkType: hard
 

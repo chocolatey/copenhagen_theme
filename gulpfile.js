@@ -111,7 +111,18 @@ function purgeCss() {
                 paths.assets + 'js/*.*.*',
                 paths.assets + 'js/*.*.*.*'
             ],
-            safelist: ['::-webkit-scrollbar', '::-webkit-scrollbar-thumb', 'link-light', 'main', 'table-bordered', 'table-striped', 'table-responsive-sm', 'clear-button'],
+            safelist: [
+                '::-webkit-scrollbar', 
+                '::-webkit-scrollbar-thumb', 
+                'link-light', 
+                'main', 
+                'table-bordered', 
+                'table-striped', 
+                'table-responsive-sm', 
+                'table-responsive', 
+                'clear-button',
+                'recent-activity-item-meta'
+            ],
             keyframes: true,
             variables: true
         }))

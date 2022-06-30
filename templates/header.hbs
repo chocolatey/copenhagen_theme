@@ -11,25 +11,25 @@
   </div>
 
   <div class="nav-wrapper-desktop">
+    {{!-- START CHOCOLATEY SPECIFIC MODIFICATION --}}
+    <div class="d-flex">
+      <label class="mb-0 me-3" for="themeToggle">
+          <input id="themeToggle" class="toggle-checkbox theme-toggle" type="checkbox" aria-label="Toggle theme settings" />
+            <div class="toggle-slot">
+                <div class="sun-icon-wrapper">
+                    <div class="sun-icon"></div>
+                </div>
+                <div class="toggle-button"></div>
+                <div class="moon-icon-wrapper">
+                    <div class="moon-icon"></div>
+                </div>
+            </div>
+      </label>
+    </div>
+    {{!-- END CHOCOLATEY SPECIFIC MODIFICATION --}}
     <nav class="user-nav" id="user-nav">
       <ul class="user-nav-list">
         <li>{{link 'community'}}</li>
-        {{!-- START CHOCOLATEY SPECIFIC MODIFICATION --}}
-        <li class="d-flex">
-          <label class="mb-0 me-3" for="themeToggle">
-              <input id="themeToggle" class="toggle-checkbox theme-toggle" type="checkbox" aria-label="Toggle theme settings" />
-                <div class="toggle-slot">
-                    <div class="sun-icon-wrapper">
-                        <div class="sun-icon"></div>
-                    </div>
-                    <div class="toggle-button"></div>
-                    <div class="moon-icon-wrapper">
-                        <div class="moon-icon"></div>
-                    </div>
-                </div>
-          </label>
-        </li>
-        {{!-- END CHOCOLATEY SPECIFIC MODIFICATION --}}
         <li>{{link 'new_request' class='submit-a-request'}}</li>
         {{#unless signed_in}}
           <li>
@@ -65,6 +65,22 @@
   </div>
 
   <div class="nav-wrapper-mobile">
+    {{!-- START CHOCOLATEY SPECIFIC MODIFICATION --}}
+    <div class="d-flex">
+      <label class="mb-0 me-3" for="themeToggle">
+          <input id="themeToggle" class="toggle-checkbox theme-toggle" type="checkbox" aria-label="Toggle theme settings" />
+            <div class="toggle-slot">
+                <div class="sun-icon-wrapper">
+                    <div class="sun-icon"></div>
+                </div>
+                <div class="toggle-button"></div>
+                <div class="moon-icon-wrapper">
+                    <div class="moon-icon"></div>
+                </div>
+            </div>
+      </label>
+    </div>
+    {{!-- END CHOCOLATEY SPECIFIC MODIFICATION --}}
     <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
       {{#if signed_in}}
         {{user_avatar class="user-avatar"}}
