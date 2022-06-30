@@ -14,7 +14,9 @@
     {
       "outputFileName": "assets/js/chocolatey.bundle.js",
       "inputFiles": [
-        "node_modules/choco-theme/js/chocolatey-theme-toggle.js"
+        "node_modules/choco-theme/js/chocolatey-theme-toggle.js",
+        "node_modules/choco-theme/js/chocolatey-tables.js",
+        "node_modules/choco-theme/js/chocolatey-inputs.js"
       ]
     }
   ]
