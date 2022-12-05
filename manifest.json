@@ -1,7 +1,7 @@
 {
   "name": "choco-theme",
   "author": "Chocolatey Software",
-  "version": "101.2.0",
+  "version": "101.3.0",
   "api_version": 2,
   "default_locale": "en-us",
   "settings": [
