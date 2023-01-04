@@ -129,7 +129,15 @@ const purgeCss = () => {
                 'table-responsive-sm',
                 'table-responsive',
                 'clear-button',
-                'recent-activity-item-meta'
+                'recent-activity-item-meta',
+                'fa-check',
+                'fa-triangle-exclamation',
+                'fa-info',
+                'fa-xmark',
+                'text-bg-warning',
+                'text-bg-danger',
+                'text-bg-success',
+                'text-bg-info'
             ],
             keyframes: true,
             variables: true
