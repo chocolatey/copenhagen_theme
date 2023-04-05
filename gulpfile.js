@@ -13,7 +13,7 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const util = require('gulp-util');
+const log = require('fancy-log');
 const inlinesource = require('gulp-inline-source');
 const bundleconfig = require('./bundleconfig.json');
 const zendeskconfig = require('./zendeskconfig.json');
@@ -92,7 +92,7 @@ const compileJs = () => {
         return b.bundle()
             .pipe(source(bundle.outputFileName))
             .pipe(buffer())
-            .on('error', util.log)
+            .on('error', error => { log.error(error.message); })
             .pipe(dest('.'));
     });
 
@@ -113,6 +113,7 @@ const purgeCss = () => {
     return src(`${paths.assets}css/chocolatey.bundle.css`)
         .pipe(purgecss({
             content: [
+                `${paths.node_modules}scss/_zendesk-guide.scss`,
                 `${paths.templates}*.hbs`,
                 `${paths.globalpartials}*.hbs`,
                 `${paths.assets}js/*.*`,
@@ -137,7 +138,10 @@ const purgeCss = () => {
                 'text-bg-warning',
                 'text-bg-danger',
                 'text-bg-success',
-                'text-bg-info'
+                'text-bg-info',
+                'chocolatey-zendesk',
+                'article-body',
+                'pre'
             ],
             keyframes: true,
             variables: true
@@ -200,7 +204,7 @@ const delEnd = () => {
         .pipe(clean({ force: true }));
 };
 
-// Independednt tasks
+// Independent tasks
 exports.del = del;
 
 // Gulp series
