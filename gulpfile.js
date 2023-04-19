@@ -17,7 +17,7 @@ const log = require('fancy-log');
 const inlinesource = require('gulp-inline-source');
 const bundleconfig = require('./bundleconfig.json');
 const zendeskconfig = require('./zendeskconfig.json');
-// const fs = require('fs');
+const fs = require('fs');
 
 const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
 const { series, parallel, src, dest } = require('gulp');
@@ -184,15 +184,24 @@ const zendeskCss = () => {
     return merge(tasks);
 };
 
-// If the JS/CSS included in the inline assets below need to be updated,
+
+// If the snippets below need updated,
 // replace the inline code with the tags specified above the function, and run `gulp`.
 
-// document_head.hbs - <script type="text/javascript" src="../assets/js/chocolatey-head.bundle.min.js" inline></script>
-// footer.hbs - <script type="text/javascript" src="../assets/js/chocolatey.bundle.min.js" inline></script>
-const inlineAssets = () => {
-    return src([`${paths.templates}footer.hbs`, `${paths.templates}document_head.hbs`])
-        .pipe(inlinesource())
-        .pipe(dest(paths.templates));
+// ${FooterAssets}
+const inlineFooterAssets = () => {
+    return src([`${paths.templates}footer.hbs`], { base: '.' })
+        .pipe(injectstring.replace(/\${FooterAssets}/g, `${fs.readFileSync(`${paths.assets}js/chocolatey.bundle.min.js`, 'utf8')}`))
+        .pipe(dest('.'));
+};
+
+// ${HeadAssets}
+// ${GoogleTag}
+const inlineHeadAssets = () => {
+    return src([`${paths.templates}document_head.hbs`], { base: '.' })
+        .pipe(injectstring.replace(/\${HeadAssets}/g, `${fs.readFileSync(`${paths.assets}js/chocolatey-head.bundle.min.js`, 'utf8')}`))
+        .pipe(injectstring.replace(/\${GoogleTag}/g, `${fs.readFileSync(`${paths.theme}partials/GoogleTag.html`, 'utf8')}`))
+        .pipe(dest('.'));
 };
 
 const delEnd = () => {
@@ -210,7 +219,7 @@ exports.del = del;
 // Gulp series
 exports.compileSassJs = parallel(compileSass, compileJs);
 exports.minCssJs = parallel(minCss, minJs);
-exports.compileZendesk = parallel(zendeskCss, inlineAssets);
+exports.compileZendesk = parallel(zendeskCss, inlineFooterAssets, inlineHeadAssets);
 
 // Gulp default
 exports.default = series(copyTheme, exports.compileSassJs, compileCss, purgeCss, exports.minCssJs, exports.compileZendesk, delEnd);
