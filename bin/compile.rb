@@ -20,7 +20,7 @@ scss_variables.concat(asset_variables)
 compiler = StylesheetCompiler.new([styles_dir], scss_variables)
 result = compiler.compile(styles)
 
-result_path = File.join(base_dir, "style-org.css")
+result_path = File.join(base_dir, "style.css")
 File.open(result_path, 'w+') {|f| f.write(result) }
 
-puts "Done :)! Created /style-org.css file"
+puts "Done :)! Created /style.css file"

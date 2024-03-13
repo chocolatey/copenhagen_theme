@@ -13,13 +13,13 @@ $font-size-navigation: 14px;
 $font-size-small: 13px;
 $font-size-smaller: 11px;
 
-$border-color: var(--choco-theme-border);
+$border-color: var(--bs-border-color);
 
 $button-color: $brand_color;
 
 $input-font-size: 14px;
-$field-text-color: var(--choco-theme-text);
-$field-text-focus-color: var(--choco-theme-text);
+$field-text-color: var(--bs-body-color);
+$field-text-focus-color: var(--bs-body-color);
 
 // Breakpoints variables
 $tablet-width: 768px;
