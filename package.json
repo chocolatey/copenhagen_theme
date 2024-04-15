@@ -1,28 +1,16 @@
 {
   "name": "copenhagen_theme",
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@4.1.1",
   "version": "1.0.0",
   "repository": "git@github.com:zendesk/copenhagen_theme.git",
   "dependencies": {
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/exec": "^5.0.0",
-    "@semantic-release/git": "^9.0.0",
-    "choco-theme": "0.5.0",
-    "husky": "^4.2.3",
-    "js-yaml": "^3.13.1",
-    "semantic-release": "^17.0.4"
+    "choco-theme": "0.6.0"
   },
   "scripts": {
-    "build": "./bin/compile.rb && gulp"
-  },
-  "resolutions": {
-    "glob-parent": "^6.0.2",
-    "nth-check": "^2.1.1",
-    "terser": "^5.14.2"
+    "build": "./bin/compile.rb & yarn choco-theme",
+    "choco-theme": "yarn dlx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=zendesk"
   }
 }
