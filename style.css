@@ -228,19 +228,6 @@ h4 {
   font-size: 16px;
 }
 
-a {
-  color: $link_color;
-  text-decoration: none;
-}
-
-a:visited {
-  color: $visited_link_color;
-}
-
-a:hover, a:active, a:focus {
-  text-decoration: underline;
-}
-
 input,
 textarea {
   color: #000;
@@ -257,14 +244,6 @@ input:not([type="checkbox"]) {
   outline: none;
 }
 
-input:not([type="checkbox"]):focus {
-  border: 1px solid $brand_color;
-}
-
-input[disabled] {
-  background-color: #ddd;
-}
-
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -278,25 +257,8 @@ select {
   width: 100%;
 }
 
-select:focus {
-  border: 1px solid $brand_color;
-}
-
 select::-ms-expand {
   display: none;
-}
-
-textarea {
-  border: 1px solid var(--bs-border-color);
-  border-radius: 2px;
-  resize: vertical;
-  width: 100%;
-  outline: none;
-  padding: 10px;
-}
-
-textarea:focus {
-  border: 1px solid $brand_color;
 }
 
 .container {
@@ -353,9 +315,9 @@ ul {
 /***** Buttons *****/
 .button, .split-button button, .section-subscribe button, .article-subscribe button, .community-follow button, .requests-table-toolbar .organization-subscribe button, .subscriptions-subscribe button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link {
   background-color: transparent;
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
   border-radius: 4px;
-  color: $brand_color;
+  color: var(--bs-primary);
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
@@ -368,6 +330,7 @@ ul {
   white-space: nowrap;
   width: 100%;
   -webkit-touch-callout: none;
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -377,14 +340,14 @@ ul {
 }
 
 .button:visited, .split-button button:visited, .section-subscribe button:visited, .article-subscribe button:visited, .community-follow button:visited, .requests-table-toolbar .organization-subscribe button:visited, .subscriptions-subscribe button:visited, .pagination-next-link:visited, .pagination-prev-link:visited, .pagination-first-link:visited, .pagination-last-link:visited, .button:hover, .split-button button:hover, .section-subscribe button:hover, .article-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover, .button:active, .split-button button:active, .section-subscribe button:active, .article-subscribe button:active, .community-follow button:active, .requests-table-toolbar .organization-subscribe button:active, .subscriptions-subscribe button:active, .pagination-next-link:active, .pagination-prev-link:active, .pagination-first-link:active, .pagination-last-link:active, .button:focus, .split-button button:focus, .section-subscribe button:focus, .article-subscribe button:focus, .community-follow button:focus, .requests-table-toolbar .organization-subscribe button:focus, .subscriptions-subscribe button:focus, .pagination-next-link:focus, .pagination-prev-link:focus, .pagination-first-link:focus, .pagination-last-link:focus, .button.button-primary, .split-button button.button-primary, .section-subscribe button.button-primary, .section-subscribe button[data-selected="true"], .article-subscribe button.button-primary, .article-subscribe button[data-selected="true"], .community-follow button.button-primary, .requests-table-toolbar .organization-subscribe button.button-primary, .requests-table-toolbar .organization-subscribe button[data-selected="true"], .subscriptions-subscribe button.button-primary, .subscriptions-subscribe button[data-selected="true"], .button-primary.pagination-next-link, .button-primary.pagination-prev-link, .button-primary.pagination-first-link, .button-primary.pagination-last-link {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
   color: $brand_text_color;
   text-decoration: none;
 }
 
 .button.button-primary:hover, .split-button button:hover, .section-subscribe button.button-primary:hover, .section-subscribe button:hover[data-selected="true"], .article-subscribe button.button-primary:hover, .article-subscribe button:hover[data-selected="true"], .community-follow button.button-primary:hover, .requests-table-toolbar .organization-subscribe button.button-primary:hover, .requests-table-toolbar .organization-subscribe button:hover[data-selected="true"], .subscriptions-subscribe button.button-primary:hover, .subscriptions-subscribe button:hover[data-selected="true"], .button-primary.pagination-next-link:hover, .button-primary.pagination-prev-link:hover, .button-primary.pagination-first-link:hover, .button-primary.pagination-last-link:hover, .button.button-primary:focus, .split-button button.button-primary:focus, .section-subscribe button.button-primary:focus, .section-subscribe button:focus[data-selected="true"], .article-subscribe button.button-primary:focus, .article-subscribe button:focus[data-selected="true"], .community-follow button.button-primary:focus, .requests-table-toolbar .organization-subscribe button.button-primary:focus, .requests-table-toolbar .organization-subscribe button:focus[data-selected="true"], .subscriptions-subscribe button.button-primary:focus, .subscriptions-subscribe button:focus[data-selected="true"], .button-primary.pagination-next-link:focus, .button-primary.pagination-prev-link:focus, .button-primary.pagination-first-link:focus, .button-primary.pagination-last-link:focus, .button.button-primary:active, .split-button button.button-primary:active, .section-subscribe button.button-primary:active, .section-subscribe button:active[data-selected="true"], .article-subscribe button.button-primary:active, .article-subscribe button:active[data-selected="true"], .community-follow button.button-primary:active, .requests-table-toolbar .organization-subscribe button.button-primary:active, .requests-table-toolbar .organization-subscribe button:active[data-selected="true"], .subscriptions-subscribe button.button-primary:active, .subscriptions-subscribe button:active[data-selected="true"], .button-primary.pagination-next-link:active, .button-primary.pagination-prev-link:active, .button-primary.pagination-first-link:active, .button-primary.pagination-last-link:active {
-  background-color: lighten($brand_color, 20%);
-  border-color: lighten($brand_color, 20%);
+  background-color: rgba(var(--bs-primary-rgb), .9);
+  border-color: rgba(var(--bs-primary-rgb), .9);
 }
 
 .button[data-disabled], .split-button button[data-disabled], .section-subscribe button[data-disabled], .article-subscribe button[data-disabled], .community-follow button[data-disabled], .requests-table-toolbar .organization-subscribe button[data-disabled], .subscriptions-subscribe button[data-disabled], .pagination-next-link[data-disabled], .pagination-prev-link[data-disabled], .pagination-first-link[data-disabled], .pagination-last-link[data-disabled] {
@@ -393,7 +356,7 @@ ul {
 
 .button-large, input[type="submit"] {
   cursor: pointer;
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
   border: 0;
   border-radius: 4px;
   color: $brand_text_color;
@@ -411,7 +374,7 @@ ul {
 }
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-  background-color: lighten($brand_color, 20%);
+  background-color: rgba(var(--bs-primary-rgb), .9);
 }
 
 .button-large[disabled], input[type="submit"][disabled] {
@@ -436,12 +399,12 @@ ul {
 }
 
 .split-button button {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
   border: 0;
   color: $brand_text_color;
   height: 32px;
   line-height: 16px;
-  outline-color: $brand_color;
+  outline-color: var(--bs-primary);
 }
 
 [dir="rtl"] .split-button button:not(:only-child):first-child {
@@ -498,19 +461,6 @@ ul {
   width: 100%;
 }
 
-.form-field input:focus {
-  border: 1px solid $brand_color;
-}
-
-.form-field input[type="text"] {
-  border: 1px solid var(--bs-border-color);
-  border-radius: 4px;
-}
-
-.form-field input[type="text"]:focus {
-  border: 1px solid $brand_color;
-}
-
 .form-field input[type="checkbox"] {
   width: auto;
 }
@@ -524,13 +474,13 @@ ul {
 }
 
 .form-field .nesty-input:focus {
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
   text-decoration: none;
 }
 
 .form-field .hc-multiselect-toggle:focus {
   outline: none;
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
   text-decoration: none;
 }
 
@@ -579,10 +529,6 @@ ul {
   padding: 10px 0;
 }
 
-.form .suggestion-list li a:visited {
-  color: $visited_link_color;
-}
-
 /***** Header *****/
 .header {
   max-width: 1160px;
@@ -609,14 +555,11 @@ ul {
 
 .logo span {
   margin: 0 10px;
-  color: $brand_color;
+  color: var(--bs-primary);
 }
 
 .logo a {
   display: inline-block;
-}
-
-.logo a:hover, .logo a:focus, .logo a:active {
   text-decoration: none;
 }
 
@@ -685,7 +628,6 @@ ul {
 
 .nav-wrapper-desktop a {
   border: 0;
-  color: $link_color;
   display: none;
   font-size: 14px;
   padding: 0 20px 0 0;
@@ -704,8 +646,6 @@ ul {
 
 .nav-wrapper-desktop a:hover, .nav-wrapper-desktop a:focus, .nav-wrapper-desktop a:active {
   background-color: transparent;
-  color: $link_color;
-  text-decoration: underline;
 }
 
 @media (min-width: 1024px) {
@@ -875,19 +815,19 @@ ul {
 
 .user-info > button {
   border: 0;
-  color: $link_color;
+  color: var(--bs-primary);
   min-width: 0;
   padding: 0;
   white-space: nowrap;
 }
 
 .user-info > button:hover, .user-info > button:focus {
-  color: $link_color;
+  color: rgba(var(--bs-primary-rgb), .9);
   background-color: transparent;
 }
 
 .user-info > button::after {
-  color: $link_color;
+  color: var(--bs-primary);
   padding-right: 15px;
 }
 
@@ -931,7 +871,7 @@ ul {
 }
 
 .avatar .icon-agent {
-  color: $brand_color;
+  color: var(--bs-primary);
   border: 2px solid #fff;
   border-radius: 50%;
   bottom: -4px;
@@ -1007,10 +947,6 @@ ul {
   margin: 0 4px;
 }
 
-.breadcrumbs li a:visited {
-  color: $link_color;
-}
-
 /***** Search field *****/
 .search-container {
   position: relative;
@@ -1027,7 +963,7 @@ ul {
 }
 
 .search:focus-within {
-  border-color: $brand_color;
+  border-color: var(--bs-primary);
 }
 
 .search input[type="search"],
@@ -1076,13 +1012,13 @@ ul {
 }
 
 .search .clear-button:hover {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
   color: #fff;
 }
 
 .search .clear-button:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px $brand_color;
+  box-shadow: 0 0 0 3px var(--bs-primary);
 }
 
 .search-has-value .clear-button {
@@ -1101,7 +1037,7 @@ ul {
 }
 
 [dir="ltr"] .search-has-value input[type="search"]:focus {
-  border-right-color: $brand_color;
+  border-right-color: var(--bs-primary);
 }
 
 [dir="ltr"] .search .clear-button {
@@ -1111,7 +1047,7 @@ ul {
 }
 
 [dir="ltr"] .search .clear-button:focus {
-  border-left-color: $brand_color;
+  border-left-color: var(--bs-primary);
 }
 
 [dir="rtl"] .search input[type="search"] {
@@ -1126,7 +1062,7 @@ ul {
 }
 
 [dir="rtl"] .search-has-value input[type="search"]:focus {
-  border-left-color: $brand_color;
+  border-left-color: var(--bs-primary);
 }
 
 [dir="rtl"] .search .clear-button {
@@ -1136,7 +1072,7 @@ ul {
 }
 
 [dir="rtl"] .search .clear-button:focus {
-  border-right-color: $brand_color;
+  border-right-color: var(--bs-primary);
 }
 
 .search-icon {
@@ -1280,10 +1216,10 @@ ul {
 }
 
 .blocks-item {
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
   border-radius: 4px;
   box-sizing: border-box;
-  color: $brand_color;
+  color: var(--bs-primary);
   display: flex;
   flex: 1 0 340px;
   margin: 0 0 30px;
@@ -1298,12 +1234,11 @@ ul {
 }
 
 .blocks-item:hover, .blocks-item:focus, .blocks-item:active {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
 }
 
 .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
   color: $brand_text_color;
-  text-decoration: none;
 }
 
 .blocks-item-internal {
@@ -1323,7 +1258,7 @@ ul {
 }
 
 .blocks-item-link {
-  color: $brand_color;
+  color: var(--bs-primary);
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
@@ -1334,13 +1269,11 @@ ul {
 
 .blocks-item-link:visited, .blocks-item-link:hover, .blocks-item-link:active {
   color: inherit;
-  text-decoration: none;
 }
 
 .blocks-item-link:focus {
   outline: 0;
-  box-shadow: 0 0 0 3px $brand_color;
-  text-decoration: none;
+  box-shadow: 0 0 0 3px var(--bs-primary);
 }
 
 .blocks-item-title {
@@ -1440,19 +1373,6 @@ ul {
   max-width: 100%;
 }
 
-.community a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.community a:visited {
-  color: $visited_link_color;
-}
-
-.community a:hover, .community a:active, .community a:focus {
-  color: $hover_link_color;
-}
-
 .community,
 .activity {
   border-top: 1px solid var(--bs-border-color);
@@ -1534,19 +1454,6 @@ ul {
   padding-top: 15px;
 }
 
-.recent-activity-controls a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.recent-activity-controls a:visited {
-  color: $visited_link_color;
-}
-
-.recent-activity-controls a:hover, .recent-activity-controls a:active, .recent-activity-controls a:focus {
-  color: $hover_link_color;
-}
-
 .recent-activity-accessibility-label {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1563,7 +1470,7 @@ ul {
 
 .recent-activity-comment-icon svg {
   vertical-align: middle;
-  color: $brand_color;
+  color: var(--bs-primary);
   width: 16px;
   height: 16px;
 }
@@ -1643,7 +1550,7 @@ ul {
 }
 
 .icon-star {
-  color: $brand_color;
+  color: var(--bs-primary);
   font-size: 18px;
 }
 
@@ -1784,19 +1691,6 @@ ul {
   vertical-align: middle;
 }
 
-.article-body a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.article-body a:visited {
-  color: $visited_link_color;
-}
-
-.article-body a:hover, .article-body a:active, .article-body a:focus {
-  color: $hover_link_color;
-}
-
 .article-body img {
   height: auto;
   max-width: 100%;
@@ -1875,13 +1769,9 @@ ul {
   color: lighten($text_color, 20%);
 }
 
-.article-comment-count:hover {
-  text-decoration: none;
-}
-
 .article-comment-count-icon {
   vertical-align: middle;
-  color: $brand_color;
+  color: var(--bs-primary);
   width: 18px;
   height: 18px;
 }
@@ -1949,19 +1839,6 @@ ul {
   text-align: center;
 }
 
-.article-more-questions a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.article-more-questions a:visited {
-  color: $visited_link_color;
-}
-
-.article-more-questions a:hover, .article-more-questions a:active, .article-more-questions a:focus {
-  color: $hover_link_color;
-}
-
 .article-return-to-top {
   border-top: 1px solid var(--bs-border-color);
 }
@@ -1976,10 +1853,6 @@ ul {
   color: $text_color;
   display: block;
   padding: 20px 0;
-}
-
-.article-return-to-top a:hover, .article-return-to-top a:focus {
-  text-decoration: none;
 }
 
 .article-return-to-top-icon {
@@ -2051,15 +1924,6 @@ ul {
   width: 25px;
 }
 
-.share a {
-  color: lighten($text_color, 20%);
-}
-
-.share a:hover {
-  text-decoration: none;
-  color: $brand_color;
-}
-
 .share a svg {
   height: 18px;
   width: 18px;
@@ -2098,19 +1962,6 @@ ul {
   margin-bottom: 0;
 }
 
-.comment-callout a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.comment-callout a:visited {
-  color: $visited_link_color;
-}
-
-.comment-callout a:hover, .comment-callout a:active, .comment-callout a:focus {
-  color: $hover_link_color;
-}
-
 .comment-sorter {
   display: inline-block;
   float: right;
@@ -2131,7 +1982,7 @@ ul {
 }
 
 .comment-wrapper.comment-official {
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
   padding: 40px 20px 20px;
 }
 
@@ -2255,7 +2106,7 @@ ul {
 }
 
 .comment-attachments a {
-  color: $brand_color;
+  color: var(--bs-primary);
 }
 
 .comment-body {
@@ -2267,19 +2118,6 @@ ul {
   font-family: $text_font;
   line-height: 1.6;
   overflow-x: auto;
-}
-
-.comment-body a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.comment-body a:visited {
-  color: $visited_link_color;
-}
-
-.comment-body a:hover, .comment-body a:active, .comment-body a:focus {
-  color: $hover_link_color;
 }
 
 .comment-body img {
@@ -2351,10 +2189,6 @@ ul {
   text-align: center;
 }
 
-.vote a:active, .vote a:hover, .vote a:focus {
-  text-decoration: none;
-}
-
 .vote-sum {
   color: lighten($text_color, 20%);
   display: block;
@@ -2372,7 +2206,7 @@ ul {
 
 .vote-up:hover,
 .vote-down:hover {
-  color: $brand_color;
+  color: var(--bs-primary);
 }
 
 .vote-up, .vote-down {
@@ -2391,11 +2225,11 @@ ul {
 }
 
 .vote-voted {
-  color: $brand_color;
+  color: var(--bs-primary);
 }
 
 .vote-voted:hover {
-  color: lighten($brand_color, 20%);
+  color: rgba(var(--bs-primary-rgb), .9);
 }
 
 /***** Actions *****/
@@ -2535,7 +2369,7 @@ ul {
 }
 
 .community-follow button:hover {
-  background-color: $brand_color;
+  background-color: rgba(var(--bs-primary-rgb), .9);
 }
 
 .community-follow button:hover::after, .community-follow button:focus::after {
@@ -2544,7 +2378,7 @@ ul {
 }
 
 .community-follow button[data-selected="true"] {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
   color: $brand_text_color;
 }
 
@@ -2554,14 +2388,14 @@ ul {
 }
 
 .community-follow button[data-selected="true"]:hover {
-  background-color: lighten($brand_color, 20%);
-  border-color: lighten($brand_color, 20%);
+  background-color: rgba(var(--bs-primary-rgb), .9);
+  border-color: rgba(var(--bs-primary-rgb), .9);
 }
 
 .community-follow button::after {
-  border-left: 1px solid $brand_color;
+  border-left: 1px solid var(--bs-primary);
   content: attr(data-follower-count);
-  color: $brand_color;
+  color: var(--bs-primary);
   display: inline-block;
   font-family: $heading_font;
   margin-left: 15px;
@@ -2578,7 +2412,7 @@ ul {
 
 [dir="rtl"] .community-follow button::after {
   border-left: 0;
-  border-right: 1px solid $brand_color;
+  border-right: 1px solid var(--bs-primary);
   margin: 0 10px 0 0;
   padding: 0 10px 0 0;
 }
@@ -2610,7 +2444,7 @@ ul {
 }
 
 .striped-list-title {
-  color: $link_color;
+  color: var(--bs-primary);
   margin-bottom: 10px;
   margin-right: 5px;
 }
@@ -2620,7 +2454,7 @@ ul {
 }
 
 .striped-list-title:visited {
-  color: $visited_link_color;
+  color: rgba(var(--bs-primary-rgb), .9);;
 }
 
 .striped-list .meta-group {
@@ -2689,7 +2523,7 @@ ul {
 }
 
 .status-label-pinned, .status-label-featured, .status-label-official {
-  background-color: $brand_color;
+  background-color: var(--bs-primary);
 }
 
 .status-label-official {
@@ -2870,19 +2704,6 @@ ul {
   margin-right: 10px;
 }
 
-.post-body a {
-  color: $link_color;
-  text-decoration: underline;
-}
-
-.post-body a:visited {
-  color: $visited_link_color;
-}
-
-.post-body a:hover, .post-body a:active, .post-body a:focus {
-  color: $hover_link_color;
-}
-
 .post-body img {
   height: auto;
   max-width: 100%;
@@ -2956,7 +2777,7 @@ ul {
 }
 
 .post-comment-count .icon-comments {
-  color: $brand_color;
+  color: var(--bs-primary);
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -3142,7 +2963,7 @@ ul {
 
 .collapsible-nav-toggle:focus {
   outline: none;
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
 }
 
 .collapsible-nav-list {
@@ -3172,7 +2993,6 @@ ul {
     margin-right: 0;
   }
   .collapsible-nav-list li a {
-    text-decoration: none;
     padding: 15px 0;
   }
 }
@@ -3188,7 +3008,6 @@ ul {
   }
   .collapsible-nav-list li:hover a:not([aria-current="page"]) {
     padding: 15px 0 11px 0;
-    text-decoration: none;
   }
 }
 
@@ -3219,7 +3038,7 @@ ul {
 @media (min-width: 768px) {
   .collapsible-nav-list li[aria-selected="true"],
   .collapsible-nav-list li.current {
-    border-bottom: 4px solid $brand_color;
+    border-bottom: 4px solid var(--bs-primary);
     order: 1;
   }
 }
@@ -3292,7 +3111,7 @@ ul {
 
 .collapsible-sidebar-toggle:focus {
   outline: none;
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
 }
 
 .collapsible-sidebar-body {
@@ -3655,7 +3474,7 @@ ul {
 }
 
 .request-main .form-field.comment-ccs > ul[data-hc-focus="true"] {
-  border: 1px solid $brand_color;
+  border: 1px solid var(--bs-primary);
 }
 
 .request-main .form-field.comment-ccs > input[type="text"] {
@@ -3671,7 +3490,7 @@ ul {
 }
 
 .request-main .comment-ccs + textarea:focus {
-  border-top: 1px solid $brand_color;
+  border-top: 1px solid var(--bs-primary);
 }
 
 .request-main input#mark_as_solved {
@@ -4096,9 +3915,9 @@ ul {
 
 .profile-private-badge {
   flex-basis: 100%;
-  border: solid 1px $brand_color;
+  border: solid 1px var(--bs-primary);
   border-radius: 4px;
-  color: $brand_color;
+  color: var(--bs-primary);
   padding: 5px 20px;
   font-size: 12px;
   text-align: center;
@@ -4582,7 +4401,7 @@ ul {
   cursor: pointer;
   display: block;
   padding: 10px;
-  color: $link_color;
+  color: var(--bs-primary);
 }
 
 .search-results-sidebar .see-all-filters[aria-hidden="true"] {
@@ -4691,7 +4510,7 @@ ul {
 }
 
 .search-result-votes-icon, .search-result-meta-count-icon {
-  color: $brand_color;
+  color: var(--bs-primary);
   vertical-align: middle;
   width: 13px;
   height: 13px;
@@ -4829,7 +4648,6 @@ html[lang|="zh"] .search-results-description em {
   cursor: pointer;
   opacity: .6;
   transition: opacity 100ms ease;
-  text-decoration: none !important;
 }
 
 .notification-dismiss:hover {
@@ -4960,7 +4778,6 @@ html[dir="rtl"] .notification-left-aligned {
 
 .dropdown-menu [role="menuitem"]:hover, .dropdown-menu [role="menuitem"]:focus {
   background: #f3f3f3;
-  text-decoration: none;
   color: #333;
 }
 
