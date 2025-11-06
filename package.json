@@ -13,6 +13,6 @@
     "@chocolatey-software/build-tools": "2.0.0"
   },
   "dependencies": {
-    "@chocolatey-software/zendesk": "2.0.0"
+    "@chocolatey-software/zendesk": "2.1.0"
   }
 }
