@@ -7,10 +7,11 @@
     "build": "yarn choco-theme",
     "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts zendesk",
     "choco-theme": "yarn build-copy-theme",
-    "link-packages": "npx tsx node_modules/@chocolatey-software/build-tools/build/link.ts"
+    "link-github": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-github.ts",
+    "link-local": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-local.ts"
   },
   "devDependencies": {
-    "@chocolatey-software/build-tools": "2.0.0"
+    "@chocolatey-software/build-tools": "chocolatey/choco-theme#head=release/2.5.0&workspace=@chocolatey-software/build-tools"
   },
   "dependencies": {
     "@chocolatey-software/zendesk": "2.1.0"
