@@ -1586,7 +1586,7 @@ ul {
 
 .section-list-item a {
   align-items: center;
-  color: $text_color;
+  color: var(--bs-primary);
   display: flex;
   justify-content: space-between;
 }
