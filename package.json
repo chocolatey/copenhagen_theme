@@ -8,6 +8,8 @@
   },
   "scripts": {
     "audit": "yarn npm audit --all --recursive --no-deprecations",
+    "audit-direct": "yarn npm audit --all --no-deprecations",
+    "audit-resolve": "powershell -NoProfile -File node_modules/@chocolatey-software/build-tools/build/Resolve-YarnAudit.ps1",
     "build": "yarn choco-theme",
     "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts zendesk",
     "choco-theme": "yarn build-copy-theme",
@@ -15,7 +17,7 @@
     "link-local": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-local.ts"
   },
   "devDependencies": {
-    "@chocolatey-software/build-tools": "2.8.0"
+    "@chocolatey-software/build-tools": "2.9.2"
   },
   "dependencies": {
     "@chocolatey-software/zendesk": "2.9.0"
