@@ -17,9 +17,9 @@
     "link-local": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-local.ts"
   },
   "devDependencies": {
-    "@chocolatey-software/build-tools": "2.9.2"
+    "@chocolatey-software/build-tools": "2.10.0"
   },
   "dependencies": {
-    "@chocolatey-software/zendesk": "2.9.0"
+    "@chocolatey-software/zendesk": "2.10.0"
   }
 }
